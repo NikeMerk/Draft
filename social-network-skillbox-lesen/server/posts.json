@@ -1,0 +1,50 @@
+{
+  "1efd4999-66c4-45bb-8cc6-380f502ac6e0": {
+    "id": "1efd4999-66c4-45bb-8cc6-380f502ac6e0",
+    "text": "Привет!",
+    "authorId": "9878f52d-477e-4c6c-ba08-97ceaf67308f",
+    "createdAt": 1704667927784
+  },
+  "cb1ba1bd-1456-4e83-84f7-d713466dee21": {
+    "id": "cb1ba1bd-1456-4e83-84f7-d713466dee21",
+    "text": "Как дела?",
+    "authorId": "9878f52d-477e-4c6c-ba08-97ceaf67308f",
+    "createdAt": 1704668049395
+  },
+  "5500d6e3-ae06-4a73-9a68-48062ccf0c2d": {
+    "id": "5500d6e3-ae06-4a73-9a68-48062ccf0c2d",
+    "text": "Неплохо :)",
+    "authorId": "df7182dd-b3c6-46cf-9133-f922f988c75d",
+    "createdAt": 1704901834902
+  },
+  "35b6baa1-4f41-4886-89bf-20dd83b78364": {
+    "id": "35b6baa1-4f41-4886-89bf-20dd83b78364",
+    "text": "А ты как?",
+    "authorId": "df7182dd-b3c6-46cf-9133-f922f988c75d",
+    "createdAt": 1704901870088
+  },
+  "a4e69754-f23f-4d23-bac9-133c2083c281": {
+    "id": "a4e69754-f23f-4d23-bac9-133c2083c281",
+    "text": "sdfgdfsgdsfgsdfg",
+    "authorId": "c9541396-ee9b-49ec-b3ac-be7627bf81a8",
+    "createdAt": 1720434344398
+  },
+  "1007a16e-d8ac-4824-83da-321a878171a6": {
+    "id": "1007a16e-d8ac-4824-83da-321a878171a6",
+    "text": "hello world",
+    "authorId": "c9541396-ee9b-49ec-b3ac-be7627bf81a8",
+    "createdAt": 1720434540769
+  },
+  "1e3e7018-7de0-48b2-a2ba-52669df0e824": {
+    "id": "1e3e7018-7de0-48b2-a2ba-52669df0e824",
+    "text": "hello world",
+    "authorId": "c9541396-ee9b-49ec-b3ac-be7627bf81a8",
+    "createdAt": 1720434551336
+  },
+  "1a698829-a2b9-474b-be8c-7cd72c107a66": {
+    "id": "1a698829-a2b9-474b-be8c-7cd72c107a66",
+    "text": "hello world",
+    "authorId": "c9541396-ee9b-49ec-b3ac-be7627bf81a8",
+    "createdAt": 1720434552859
+  }
+}
