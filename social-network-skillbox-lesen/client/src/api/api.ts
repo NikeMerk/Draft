@@ -5,7 +5,7 @@ import {validateResponse} from "./validataResponse.ts";
 // const URL = "http://localhost:4000"
 
 export const fetchPostList = async (): Promise<PostList> => {
-  return await fetch(`/api/posts`)
+  return await fetch("/api/posts")
     .then(arr => arr.json())
     .then(res => res.list)
 }
@@ -40,7 +40,7 @@ export const login = (username: string, password: string): Promise<void> => {
 }
 
 export const fetchMe = (): Promise<User> => {
-  return fetch(`/api/users/me`)
+  return fetch("/api/users/me")
     .then(validateResponse)
     .then(res => res.json())
     .then(res => UserSchema.parse(res))
@@ -56,6 +56,6 @@ export const createPost = (text: string): Promise<void> => {
       text,
     })
   })
-    .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => validateResponse(res))
+    .then(() => undefined)
 }

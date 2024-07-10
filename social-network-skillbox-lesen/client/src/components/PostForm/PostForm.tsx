@@ -1,4 +1,4 @@
-import {FC, FormEventHandler, useState} from 'react';
+import {FC} from 'react';
 
 import {Button} from '../Button';
 import {FormField} from '../FormField';
@@ -6,33 +6,43 @@ import './PostForm.css';
 import {useMutation} from "@tanstack/react-query";
 import {createPost} from "../../api/api.ts";
 import {queryCLient} from "../../api/queryCLient.ts";
+import {z} from "zod";
+import {useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
 
+const CreatePostSchema = z.object({
+  text: z.string().min(10, "Длина строки не менее 10 символов")
+})
 
-export interface IPostFormProps {
-}
+export interface IPostFormProps {}
+type CreatePostForm = z.infer<typeof CreatePostSchema>
 
 export const PostForm: FC<IPostFormProps> = () => {
-  const [text, setText] = useState('');
+
+  const {
+    register,
+    handleSubmit,
+    formState:{errors}
+  } =  useForm<CreatePostForm>({
+    resolver: zodResolver(CreatePostSchema)
+  })
 
   const createPostMutation =  useMutation({
-
-    mutationFn: () => createPost(text),
+    mutationFn: createPost,
     onSuccess() {
-      queryCLient.invalidateQueries({queryKey: ["posts"]})
+      queryCLient.invalidateQueries({queryKey: ["posts"]});
     }
   }, queryCLient)
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault()
-    createPostMutation.mutate()
-  };
+
 
   return (
-    <form onSubmit={handleSubmit} className="post-form">
-      <FormField label="Текст поста">
+    <form onSubmit={handleSubmit(({text}) => {
+      createPostMutation.mutate(text)
+    })} className="post-form">
+      <FormField label="Текст поста" errorMessage={errors.text?.message}>
         <textarea className="post-form__input"
-                  value={text}
-                  onChange={(event) => setText(event.currentTarget.value)}
+                  {...register("text")}
         />
       </FormField>
 
